@@ -1,0 +1,66 @@
+/* Estilos da Barra de Pesquisa e Botão Adicionar */
+.secao-pesquisa {
+    justify-content: space-between;
+    width: 80%;
+    margin: 2rem auto; /* Centraliza a barra de pesquisa na página */
+}
+
+.secao-pesquisa, .secao-pesquisa form, .entrada-pesquisa, .add-butao {
+    display: flex;
+    align-items: center;
+}
+
+.secao-pesquisa form {
+    width: 90%; /* Ajusta a largura da barra de pesquisa */
+    margin-right: 1rem; /* Adiciona espaço entre a barra de pesquisa e o botão + */
+}
+
+.entrada-pesquisa {
+    background-color: var(--cor-terciaria);
+    padding: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.entrada-pesquisa, .entrada-pesquisa input[type="text"] {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.entrada-pesquisa input[type="text"] {
+    padding: 0.5rem 1rem;
+    outline: none;
+    font-size: 1rem;
+}
+
+.entrada-pesquisa input[type="text"], .add-butao {
+    border: none;
+}
+
+.icone-pesquisa {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+.icone-pesquisa, .add-butao {
+    cursor: pointer;
+}
+
+.ancora-add-butao {
+    text-decoration: none;
+}
+
+.add-butao {
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: background-color 0.3s ease; /* Adiciona transição suave */
+}
+
+.add-butao:hover {
+    background-color: var(--cor-quaternaria);
+}

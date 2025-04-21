@@ -1,0 +1,179 @@
+:root {
+    --cor-primaria: #405394;
+    --cor-secundaria: #F2F5FF;
+    --cor-terciaria: #fff;
+    --cor-quaternaria: #e94e1b;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif !important;
+}
+
+body {
+    height: 100%;
+    background-image: url("../assets/backgrounds/textura-de-plano-de-fundo.png");
+}
+
+header {
+    margin-bottom: 5%;
+    height: 8rem;
+    background: var(--cor-primaria);
+    justify-items: center;
+}
+
+header, h1 {
+    align-content: center;
+}
+
+header, .formulario-container, .corpo-principal, .logo img, nav ul li a, .conteudo {
+    width: 100%;
+}
+
+.fundo-conteudo {
+    min-height: 100vh; /* Garante que o conteúdo ocupe toda a tela */
+}
+
+.fundo-conteudo, .barra-lateral, nav ul li a, .caixa-cabecalho, .info-usuario {
+    display: flex;
+}
+
+.menu-hamburger {
+    display: none;
+    position: fixed;
+    top: 1%;
+    left: 0;
+    background-color: var(--cor-terciaria);
+    border: 1px solid var(--cor-secundaria);
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    z-index: 1001;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu-hamburger, .info-usuario img {
+    border-radius: 50%;
+}
+
+.menu-hamburger, .info-usuario {
+    justify-content: center;
+}
+
+.menu-hamburger, nav ul li a, .info-usuario {
+    align-items: center;
+}
+
+.menu-hamburger svg {
+    color: var(--cor-primaria);
+}
+
+.barra-lateral {
+    width: 17em;
+    height: 100vh; /* Ocupa 100% da altura da tela */
+    background: var(--cor-terciaria);
+    box-shadow: 4px 0 10px rgba(122, 122, 122, 0.25);
+    flex-direction: column; /* Mantém os itens alinhados verticalmente */
+    position: sticky;
+    top: 0px;
+}
+
+.logo img {
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1.2);
+}
+
+.logo img:hover {
+    transform: scale(1.5); /* Aumenta 20% ao passar o mouse */
+}
+
+nav ul {
+    padding: 0 1em;
+    flex-grow: 1; /* Faz a navegação ocupar o espaço disponível */
+}
+
+nav ul li {
+    margin-bottom: 10%;
+}
+
+nav ul li a {
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    justify-content: baseline;
+}
+
+nav ul li a, .ancora-add-butao {
+    text-decoration: none;
+}
+
+nav ul li a, .info-usuario {
+    gap: 1em;
+}
+
+.barra-lateral nav ul li a:hover {
+    background-color: var(--cor-quaternaria);
+}
+
+.conteudo {
+    display: block;
+}
+
+.caixa-cabecalho {
+    justify-content: space-between;
+    color: var(--cor-terciaria);
+}
+
+.caixa-cabecalho, .formulario-container {
+    width: 80%;
+}
+
+h1 {
+    font-size: 1.7em;
+}
+
+.info-usuario img {
+    padding: .2em;
+    width: 2.5em;
+    height: auto;
+    background-color: var(--cor-terciaria);
+}
+
+.detalhes-usuario {
+    min-width: 129px;
+}
+
+@media (max-width: 540px) {
+    /* Exibir o botão do menu hambúrguer */
+    .menu-hamburger {
+        display: flex;
+    }
+
+    /* Menu lateral escondido por padrão */
+    .barra-lateral {
+        transform: translateX(-100%);
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: var(--cor-terciaria);
+        /*box-shadow: 4px 0 10px rgba(122, 122, 122, 0.25);*/
+        box-shadow: none;
+        display: flex;
+        flex-direction: column;
+        z-index: 1000;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    /* Exibir o menu quando ativo */
+    .barra-lateral.active {
+        transform: translateX(0);
+    }
+
+    /* Ocultar detalhes do usuário */
+    .detalhes-usuario {
+        display: none;
+    }
+}
