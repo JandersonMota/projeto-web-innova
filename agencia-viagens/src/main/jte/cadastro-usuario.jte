@@ -1,4 +1,5 @@
 @import com.agenciaviagens.dto.Page
+@import com.agenciaviagens.dto.UsuarioDTO
 @import com.agenciaviagens.model.Usuario
 
 @param Usuario user
@@ -82,15 +83,18 @@ content = @`
                     <div class="caixa lado-a-lado">
                         <div class="caixa-input">
                             <div class="lado-mesclado">
+
+                                @for (var telefone : user.getTelefones())
+                                    <input type="tel" placeholder="Telefone *" class="telefone" name="telefones" value="${telefone.getNumero()}" required>
+
+                                    <select name="tipoTelefones" class="telefone-selecao" required>
+                                        <option value="" disabled selected>Selecione...</option>
+                                        <option value="telefone" selected="${telefone.getTipo().equals("telefone")}">Phone</option>
+                                        <option value="telegram" selected="${telefone.getTipo().equals("telegram")}">Telegram</option>
+                                        <option value="whatsapp" selected="${telefone.getTipo().equals("whatsapp")}">WhatsApp</option>
+                                    </select>
+                                @endfor
                                 
-                                <input type="tel" placeholder="Telefone *" class="telefone" value="${user.telefones.getNumero()}" required>
-                                
-                                <select name="tipo_contato1" class="telefone-selecao" value="${user.telefones.getTipo()}" required>
-                                    <option value="" disabled selected>Selecione...</option>
-                                    <option value="telefone">Phone</option>
-                                    <option value="telegram">Telegram</option>
-                                    <option value="whatsapp">WhatsApp</option>
-                                </select>
                             </div>
                         </div>
     
