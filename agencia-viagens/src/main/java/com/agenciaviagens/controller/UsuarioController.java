@@ -64,7 +64,7 @@ public class UsuarioController {
     @GetMapping("/cadastro")
     public ModelAndView buscarUsuario() {
         var model = new ModelAndView();
-        model.setViewName("cadastro");
+        model.setViewName("cadastro-usuario");
         model.addObject("usuario", new Usuario());
         return model;
     }

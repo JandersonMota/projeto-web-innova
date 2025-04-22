@@ -4,7 +4,7 @@
 @import java.util.List
 
 @param List<Usuario> usuarios
-@param List<UsuarioDTO> obj
+<!-- @param List<UsuarioDTO> obj -->
 
 @template.layout.main(
 page = new Page("Gerenciamento de Usuário"),
@@ -30,27 +30,6 @@ content = @`
 
         @if(usuarios != null)
             @for (Usuario user : usuarios)
-
-                <div class="cartao">
-                    <div class="foto"><img src="/assets/backgrounds/perfil-equipe.png" alt="Foto do usuário"></div>
-
-                    <div class="cartao-corpo">
-                        <div class="descricao">
-                            <h2>${user.getNome()}</h2>
-                            <p>Admistradora</p>
-                        </div>
-
-                        <a class="ancora-add-butao" href="/Usuarios/edita/${user.getIdUsuario()}"><button class="edita">Editar</button></a>
-                        <a class="ancora-add-butao" href="/Usuarios/deleta/${user.getIdUsuario()}" onclick="return confirm('Deseja apagar funcionário com ID ${user.getIdUsuario()}?')"><button class="deleta">Deletar</button></a>
-                        <button class="ativo">Ativado</button>
-                    </div>
-                </div>
-
-            @endfor
-        @endif
-
-        @if(obj != null)
-            @for (var user : obj)
 
                 <div class="cartao">
                     <div class="foto"><img src="/assets/backgrounds/perfil-equipe.png" alt="Foto do usuário"></div>

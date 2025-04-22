@@ -9,7 +9,7 @@ import lombok.Data;
 @Data
 public class UsuarioDTO {
 
-    public List<Usuario> usuarios;
+    //public List<Usuario> usuarios;
     private List<String> telefones;
     private List<String> tipoTelefones;
 
